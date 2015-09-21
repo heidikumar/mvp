@@ -1,6 +1,6 @@
 
-<!DOCTYPE <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html ng-app="mixtapeApp">
 <head>
 	<meta charset="utf-8" />
 	<title>¡MIXTAPE!</title>
@@ -17,8 +17,9 @@
 
 	<div class="player"></div>
 
-	<div class="playlist">
-		<p>Title of Playlist</p>
+	<div class="playlist" ng-controller:"playlistController">
+		<input type="text" ng-model="title" placeholder="Playlist name">
+		<h2>{{ title }}</h2>
 	</div>
 
 	<div class="search"></div>
