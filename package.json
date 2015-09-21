@@ -1,0 +1,21 @@
+{
+  "name": "mixtape",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "pre-commit": "lint",
+  "author": "Heidi Kumar",
+  "devDependencies": {
+    "browser-sync": "^1.5.7",
+    "clone-stats": "0.0.1",
+    "expect.js": "^0.3.1",
+    "jscs": "^2.1.1",
+    "pre-commit": "^1.1.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.3",
+    "node-soundcloud": "0.0.3",
+    "request": "^2.36.0"
+  }
+}
