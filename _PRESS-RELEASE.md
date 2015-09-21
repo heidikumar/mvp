@@ -17,28 +17,31 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > ¡MIXTAPE!
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > This is for children of the 80s who remember exchanging music in set playlists rather than the song-by-song/changable way of iTunes, Spotify, and other music players.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Do you remember the golden days of sorting through the music you love to make the right mix of songs? Now you can do that with
+  > ¡MIXTAPE!. When you build a mix with an intended order, it shows how much you care and it allows you to build something special and meaningful.
+  > Search for songs you love, make a playlist, "set" the playlist so that you can send it to them in the way you want them to hear it! 
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Often when people share music nowadays, it is in a scattered format. Playlist orders get shuffled or ignored, or people only listen to songs in a disjointed manner. 
+  > ¡MIXTAPE! allows users to share music in the set way they intend for it to be heard. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > This product will give the user the joy of making the perfect mix and will give them an option to deliver it to others in a set format
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "¡MIXTAPE! is better than slap bracelets and Mariokart combined!" -Heidi Kumar.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Just go to the website and start searching for songs you love! Build a playlist, tweek the order, and send it off to your friends. 
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "This is better than vinyl (though I probably can't describe why vinyl sounds better)!" - Hippity Hipster.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Try it out! Visit our website at www.somefakeaddress.com/noreallythisisafakeaddress!
