@@ -9,5 +9,18 @@
 <body>
 	<h1>¡MIXTAPE!</h1>
 
+    <script type="text/javascript" charset="utf-8" src="../scripts/soundcloud.player.api.js"></script>
+	<script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
+	<script>
+	  SC.initialize({
+	    client_id: "0e43e893359fed215845522dc5893aca",
+	    // redirect_uri: "http://example.com/callback",
+	  });
+
+	  SC.stream("/tracks/293", function(sound){
+		  sound.play();
+	   });
+	</script>
+
 </body>
 </html>>
