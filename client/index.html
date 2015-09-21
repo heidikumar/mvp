@@ -4,23 +4,49 @@
 <head>
 	<meta charset="utf-8" />
 	<title>¡MIXTAPE!</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+<!--     <script type="text/javascript" charset="utf-8" src="../scripts/soundcloud.player.api.js"></script>
+    <script type="text/javascript">
+     soundcloud.addEventListener('onPlayerReady', function(player, data) {
+       player.api_play();
+     });
+	</script> -->
 </head>
 <body>
 	<h1>¡MIXTAPE!</h1>
 
-    <script type="text/javascript" charset="utf-8" src="../scripts/soundcloud.player.api.js"></script>
-	<script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
-	<script>
-	  SC.initialize({
-	    client_id: "0e43e893359fed215845522dc5893aca",
-	    // redirect_uri: "http://example.com/callback",
-	  });
+	<div class="player"></div>
 
-	  SC.stream("/tracks/293", function(sound){
-		  sound.play();
-	   });
-	</script>
+	<div class="playlist">
+		<p>Title of Playlist</p>
+	</div>
 
+	<div class="search"></div>
+		<form>
+			Artist:<input type="text" name="artist"><br>
+			Song:<input type="text" name="song">
+		</form>
 </body>
-</html>>
+</html>
+
+<!-- 
+
+Maybe how to use the player Widget. Moving forward without it for now.
+
+	<script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
+	<object height="81" width="100%" id="yourPlayerId" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=yourPlayerId"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fmatas%2Fhobnotropic&enable_api=true&object_id=yourPlayerId" type="application/x-shockwave-flash" width="100%" name="yourPlayerId"></embed>
+	</object> -->
+
+	<!--<script>
+	//   SC.initialize({
+	//     client_id: "0e43e893359fed215845522dc5893aca",
+	//     // redirect_uri: "http://example.com/callback",
+	//   });
+
+	//   SC.stream("/tracks/293", function(sound){
+	// 	  sound.play();
+	//    });
+	// </script> -->
