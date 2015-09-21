@@ -1,0 +1,35 @@
+
+Requirements of Product:
+
+1. Search form to lookup a song
+	-- if not found, show error message
+	-- if found, add to playlist view
+
+2. Display of playlists
+	-- title is an input field so you can change the playlist name
+	-- adds the song title and artist to the list once it has been searched
+	-- draggable so the songs can be resorted
+		--will draggable list update mySql with order? Can I just get the order set on send?
+	-- clicking on a song plays it in the html player above the playlist
+
+3. Send button (This is the Nightmare Mode part, I expect!)
+	-- takes list of titles and songs and saves that to database
+	-- redirects to a new page "/playListName"
+	-- needs to build a playlist from database info. 
+	-- renders a playable playlist
+
+Steps to Building:
+
+1. The requests will require learning the SoundCloud API and making sure I can get and send the right information. If I can't do that, I won't have any of my functionality.
+
+2. I'm going to build up the main front page's html. This way I have something to work from in terms of building up features
+	a. This probably means I'll work with Angular to adjust or change the front page. A little concerned, but we're here to learn, right?
+	b. Should I build this all in Backbone? Is that worth the time?
+			--Nope. Going with Angular because I think the draggable lists and "song not found" features will be easier.
+
+3. Build adding functionality to list
+4. Make player play songs added to the list
+5. Build dragging functionality to the list
+
+6. Send function
+	-This will be very involved
