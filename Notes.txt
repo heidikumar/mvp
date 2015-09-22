@@ -22,14 +22,15 @@ Steps to Building:
 
 1. The requests will require learning the SoundCloud API and making sure I can get and send the right information. If I can't do that, I won't have any of my functionality. (Meh, didn't work well and I didn't have time)
 
-2. I'm going to build up the main front page's html. This way I have something to work from in terms of building up features
-	a. This probably means I'll work with Angular to adjust or change the front page. A little concerned, but we're here to learn, right?
-	b. Should I build this all in Backbone? Is that worth the time?
-			--Nope. Going with Angular because I think the draggable lists and "song not found" features will be easier.
-
-3. Build adding functionality to list
-4. Make player play songs added to the list
-5. Build dragging functionality to the list
+2. Setup basic page in Angular (DONE)
+3. Build adding functionality to list (DONE)
+4. Make player play songs added to the list (DONE)
+5. Build dragging functionality to the list (I worked for a while with draganddrop and NgDragDrop and then decided this is not going to happen in this amount of time)
 
 6. Send function
-	-This will be very involved
+	Basic button is set up, so now I need to:
+
+	-- Write a factory into Angular to make POST requests to a '/savePlaylist' or some such address
+	-- In mixtape.js, write app.post ('/savePlaylist', someHandlerfunciton ) to route to requestHandler
+	-- write to a function to send info to database
+	-- Make a model in mongoos to set up the playlist schema
