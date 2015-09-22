@@ -37,6 +37,7 @@ exports.setTokenAndInitSC = function(request, response){
 
 exports.addPlaylist = function(obj){
 
+	console.log("I just got this: ", obj);
 	//this is going to take the information in the object and 
 	//add it to the mongo db using the mongoose model
 

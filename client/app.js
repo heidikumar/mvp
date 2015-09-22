@@ -6,14 +6,14 @@ app.controller('playlistController', function($scope, SavePlaylist){
   	$scope.tracks = ["Foo Fighters - My Hero", "Ani DiFranco - Heartbreak Even", "Rufus Wainwright - Dinner at Eight"];
 
   	$scope.addTrack = function(){
-  		console.log("addTrack was clicked!");
-  		var artist = $scope.artist;
-  		var song = $scope.song;
-  		var track = artist + " - " + song;
+      console.log("addTrack was clicked!");
+      var artist = $scope.artist;
+      var song = $scope.song;
+      var track = artist + " - " + song;
 
       //here I would like to search for the song through the Soundcloud API. Probably won't get to that now.
 
-  		$scope.tracks.push(track);
+      $scope.tracks.push(track);
     };
 
     $scope.sendList = function(){
@@ -28,29 +28,37 @@ app.controller('playlistController', function($scope, SavePlaylist){
         playlistObj["track" + i] = {artist: newTrack[0], song: newTrack[1]};
       };
       // console.log(playlistObj); THIS IS WORKING! YAY
-      SavePlaylist(playlistObj);
+
+      SavePlaylist.SavePlaylist(playlistObj);
 
       $scope.tracks = [];
     }
-
-
   });
 
-app.factory('SavePlaylist', function($http){
+app.factory('SavePlaylist', function($http, $q){
 
   var SavePlaylist = function(playlist){
     //this is taking in an object  which I want to send in a post request
-    $http.post('/savePlaylist', playlist)
-    .then(function(response){
-      console.log('post sent from SavePlaylist!');
-      return response;
+    // playlist = JSON.stringify(playlist);
+    // $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+    return $q(function(resolve, reject){
+     $http({
+        method: 'POST', 
+        url:'/savePlaylist', 
+        data : {'playlist' : playlist}
+      });
     })
-    .catch(function(err){
-      throw new Error(err);
+    .then(function(response){
+      if (response){
+        resolve(response.data);
+      } else {
+        reject(err);
+      }
     });
 
   };
-
+  
   return {SavePlaylist:SavePlaylist};
 
 });
