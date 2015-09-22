@@ -33,4 +33,4 @@ Steps to Building:
 	-- Write a factory into Angular to make POST requests to a '/savePlaylist' or some such address
 	-- In mixtape.js, write app.post ('/savePlaylist', someHandlerfunciton ) to route to requestHandler
 	-- write to a function to send info to database
-	-- Make a model in mongoos to set up the playlist schema
+	-- Make a model in mongoos to set up the playlist schema (DONE)
