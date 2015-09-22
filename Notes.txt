@@ -20,7 +20,7 @@ Requirements of Product:
 
 Steps to Building:
 
-1. The requests will require learning the SoundCloud API and making sure I can get and send the right information. If I can't do that, I won't have any of my functionality.
+1. The requests will require learning the SoundCloud API and making sure I can get and send the right information. If I can't do that, I won't have any of my functionality. (Meh, didn't work well and I didn't have time)
 
 2. I'm going to build up the main front page's html. This way I have something to work from in terms of building up features
 	a. This probably means I'll work with Angular to adjust or change the front page. A little concerned, but we're here to learn, right?
