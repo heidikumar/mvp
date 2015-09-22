@@ -4,7 +4,7 @@ var express = require('express');
 // var Promise = require('bluebird');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var requestHandler = require('requestHandler.js');
+var requestHandler = require('./requestHandler.js');
 
 
 app = express();

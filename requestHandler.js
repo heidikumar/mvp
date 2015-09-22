@@ -1,5 +1,5 @@
-var app = require('mixtape.js');
-var Playlist = require('playlist.js');
+var app = require('./mixtape.js');
+var Playlist = require('./playlist.js');
 // var SC = require('node-soundcloud');
 
 //This is stuff to later work with Soundcloud

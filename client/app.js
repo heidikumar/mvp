@@ -17,14 +17,40 @@ app.controller('playlistController', function($scope){
     };
 
     $scope.sendList = function(){
-      console.log('Playlist will be sent as soon as I have set that up');
 
-      //this is where I'd like to send the data to a database
+      var tracks = $scope.tracks;
+      var playlistObj = {
+        title: $scope.title
+      };
+
+      for (var i=0; i<tracks.length; i++){
+        var newTrack = tracks[i].split(' - ');
+        playlistObj["track" + i] = {artist: newTrack[0], song: newTrack[1]};
+      };
+
+      // console.log(playlistObj); THIS IS WORKING! YAY
 
       $scope.tracks = [];
     }
 
+
   });
+
+app.factory('SavePlaylist', function($http){
+
+  var SavePlaylist = function(playlist){
+
+
+
+
+  };
+
+
+});
+
+
+
+
   // .directive('rxDrag', function($document, $window, rx) {
   //   return function(scope, element, attrs) {
   //     // Get the three major events
