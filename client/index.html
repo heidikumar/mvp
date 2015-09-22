@@ -1,35 +1,57 @@
 
 <!DOCTYPE html>
-<html ng-app="mixtapeApp">
+<html ng-app>
 <head>
 	<meta charset="utf-8" />
 	<title>¡MIXTAPE!</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
-<!--     <script type="text/javascript" charset="utf-8" src="../scripts/soundcloud.player.api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body ng-controller:"playlistController">
+	<h1>¡MIXTAPE!</h1>
+
+	<div class="player"></div>
+
+	<div class="playlist">
+		<input type="text" ng-model="title" placeholder="Playlist name">
+		<h2>{{ title }}</h2>
+		<ul>
+			<li ng-repeat="track in tracks">
+		</ul>
+	</div>
+
+	<div class="search"></div>
+		<form ng-submit="addTrack()">
+			Artist:<input type="text" ng-model="artist"><br>
+			Song:<input type="text" ng-model="song">
+			<input type="submit" value="add" />
+		</form>
+    <script src="/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--The following is only if I get to putting in the SoundCloud Widget
+
+     <script type="text/javascript" charset="utf-8" src="../scripts/soundcloud.player.api.js"></script>
     <script type="text/javascript">
      soundcloud.addEventListener('onPlayerReady', function(player, data) {
        player.api_play();
      });
 	</script> -->
-</head>
-<body>
-	<h1>¡MIXTAPE!</h1>
-
-	<div class="player"></div>
-
-	<div class="playlist" ng-controller:"playlistController">
-		<input type="text" ng-model="title" placeholder="Playlist name">
-		<h2>{{ title }}</h2>
-	</div>
-
-	<div class="search"></div>
-		<form>
-			Artist:<input type="text" name="artist"><br>
-			Song:<input type="text" name="song">
-		</form>
-</body>
-</html>
-
 <!-- 
 
 Maybe how to use the player Widget. Moving forward without it for now.
