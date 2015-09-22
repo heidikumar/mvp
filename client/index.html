@@ -1,40 +1,59 @@
 
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="mixtapeApp">
 <head>
 	<meta charset="utf-8" />
 	<title>¡MIXTAPE!</title>
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="/angular-draganddrop.js"></script>
 </head>
-<body ng-controller:"playlistController">
-	<h1>¡MIXTAPE!</h1>
+<body ng-controller="playlistController">
+	<!-- <div ng-controller="DragDropCtrl"> -->
+	<div drop="onDrop($data, $event)" drop-effect="copy" drop-accept="'json/custom-object'" drag-over="onDragOver($event)" drag-over-class="drag-over-accept">
+		<h1>¡MIXTAPE!</h1>
 
-	<div class="player"></div>
+		<div class="player"></div>
 
-	<div class="playlist">
-		<input type="text" ng-model="title" placeholder="Playlist name">
-		<h2>{{ title }}</h2>
-		<ul>
-			<li ng-repeat="track in tracks">
-		</ul>
-	</div>
+		<div class="playlist">
+<!-- 			<div rx-drag>Drag Me!</div>
+			<div class="container">
+			<div class="page-header">
+				<h1>RxJS for AngularJS Bindings Drag and Drop Example</h1>
+				<p class="lead">Example to show coordinating events to perform drag and drop</p>
+			</div> -->
+			<input type="text" ng-model="title" placeholder="Playlist name">
+			<h2>{{ title }}</h2>
+			<ul>
+					<li ng-repeat="track in tracks" draggable="true" effect-allowed="copy" draggable-type="custom-object" draggable-data="{foo: 'bar'}"> 
+						{{track}}
+					</li>
+			</ul>
+			</div>
 
-	<div class="search"></div>
-		<form ng-submit="addTrack()">
-			Artist:<input type="text" ng-model="artist"><br>
-			Song:<input type="text" ng-model="song">
-			<input type="submit" value="add" />
-		</form>
-    <script src="/app.js"></script>
+		<div class="search"></div>
+			<form ng-submit="addTrack()">
+				Artist:<input type="text" ng-model="artist"><br>
+				Song:<input type="text" ng-model="song">
+				<input type="submit" value="add" />
+			</form>
+	    <script src="/app.js"></script>
+    <!-- </div> -->
+    </div>
 </body>
 </html>
 
+<!--<div ng-controller="DragDropCtrl">
+ 
+  <!-- Draggable element.
+  <div draggable="true" effect-allowed="copy" draggable-type="custom-object" draggable-data="{foo: 'bar'}"></div>-->
+ 
+  <!-- Dropzone element. 
+  <div drop="onDrop($data, $event)" drop-effect="copy" drop-accept="'json/custom-object'" drag-over="onDragOver($event)" drag-over-class="drag-over-accept"></div> -->
+ 
+<!--</div>--!>
 
-
-
-
-
+<div drop="onDrop($data, $event)" drop-effect="copy" drop-accept="'json/custom-object'" drag-over="onDragOver($event)" drag-over-class="drag-over-accept">
 
 
 

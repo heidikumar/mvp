@@ -1,8 +1,4 @@
 
-.player {
-
-}
-
 .playlist {
 	display: inline-block;
 	float: left;
@@ -15,3 +11,4 @@
 	float: right;
 	background-color: #cccccc;
 }
+
