@@ -3,15 +3,27 @@ var app = angular.module('mixtapeApp', ['draganddrop']);
 
 app.controller('playlistController', function($scope){
 
-	$scope.tracks = ["Ani DiFranco - You Had Time","Ani DiFranco - Subdivision","Ani DiFranco - God's Country", "Ani DiFranco - Heartbreak Even", "Ani DiFranco - My IQ"];
+  	$scope.tracks = ["Ani DiFranco - You Had Time","Ani DiFranco - Subdivision","Ani DiFranco - God's Country", "Ani DiFranco - Heartbreak Even", "Ani DiFranco - My IQ"];
 
-	$scope.addTrack = function(){
-		console.log("addTrack was clicked!");
-		var artist = $scope.artist;
-		var song = $scope.song;
-		var track = artist + " - " + song;
-		$scope.tracks.push(track);
-	};
+  	$scope.addTrack = function(){
+  		console.log("addTrack was clicked!");
+  		var artist = $scope.artist;
+  		var song = $scope.song;
+  		var track = artist + " - " + song;
+
+      //here I would like to search for the song through the Soundcloud API. Probably won't get to that now.
+
+  		$scope.tracks.push(track);
+    };
+
+    $scope.sendList = function(){
+      console.log('Playlist will be sent as soon as I have set that up');
+
+      //this is where I'd like to send the data to a database
+
+      $scope.tracks = [];
+    }
+
   });
   // .directive('rxDrag', function($document, $window, rx) {
   //   return function(scope, element, attrs) {
