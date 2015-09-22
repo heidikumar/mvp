@@ -4,6 +4,7 @@ var express = require('express');
 // var Promise = require('bluebird');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var requestHandler = require('requestHandler.js');
 
 
 app = express();
@@ -15,6 +16,14 @@ app.use(bodyParser.json());
 
 //I need to write getters and setters here using stuff from the 
 	//requestHandler 
+app.get('/', function(request, response){		
+	console.log('requesting authorization');
+	initOAuth();
+	setTokenAndInitSC();
+	console.log('app.get was called');
+});
+
+app.post('/savePlaylist', requestHandler.addPlaylist);
 
 app.listen(3000);
 console.log('App listening on port 3000');

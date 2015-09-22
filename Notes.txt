@@ -31,6 +31,7 @@ Steps to Building:
 	Basic button is set up, so now I need to:
 
 	-- Write a factory into Angular to make POST requests to a '/savePlaylist' or some such address
-	-- In mixtape.js, write app.post ('/savePlaylist', someHandlerfunciton ) to route to requestHandler
-	-- write to a function to send info to database
+	-- In mixtape.js, write app.post ('/savePlaylist', someHandlerfunciton ) to route to requestHandler (DONE)
+	-- write to a function to send info to database 
+		(It's there but the function isn't filled out. Going to do the factory first)
 	-- Make a model in mongoos to set up the playlist schema (DONE)

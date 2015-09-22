@@ -1,24 +1,19 @@
 var app = require('mixtape.js');
+var Playlist = require('playlist.js');
 // var SC = require('node-soundcloud');
 
 //This is stuff to later work with Soundcloud
 
 // Connect user to authorize application
 
-var initOAuth = function(req, res) {
+exports.initOAuth = function(req, res) {
   var url = SC.getConnectUrl();
   res.writeHead(301, url);
   res.end();
 };
 
-app.get('/', function(request, response){		
-	console.log('requesting authorization');
-	initOAuth();
-	setTokenAndInitSC();
-	console.log('app.get was called');
-});
 
-var setTokenAndInitSC = function(request, response){
+exports.setTokenAndInitSC = function(request, response){
 	var code = request.query.code;
 
 	return new Promise(function(response, reject){
@@ -38,4 +33,11 @@ var setTokenAndInitSC = function(request, response){
 		  // uri: 'your SoundCloud redirect URI'
 		});
 	});
+};
+
+exports.addPlaylist = function(obj){
+
+	//this is going to take the information in the object and 
+	//add it to the mongo db using the mongoose model
+
 };
