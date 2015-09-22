@@ -1,9 +1,9 @@
 
 var app = angular.module('mixtapeApp', ['draganddrop']);
 
-app.controller('playlistController', function($scope){
+app.controller('playlistController', function($scope, SavePlaylist){
 
-  	$scope.tracks = ["Ani DiFranco - You Had Time","Ani DiFranco - Subdivision","Ani DiFranco - God's Country", "Ani DiFranco - Heartbreak Even", "Ani DiFranco - My IQ"];
+  	$scope.tracks = ["Foo Fighters - My Hero", "Ani DiFranco - Heartbreak Even", "Rufus Wainwright - Dinner at Eight"];
 
   	$scope.addTrack = function(){
   		console.log("addTrack was clicked!");
@@ -27,8 +27,8 @@ app.controller('playlistController', function($scope){
         var newTrack = tracks[i].split(' - ');
         playlistObj["track" + i] = {artist: newTrack[0], song: newTrack[1]};
       };
-
       // console.log(playlistObj); THIS IS WORKING! YAY
+      SavePlaylist(playlistObj);
 
       $scope.tracks = [];
     }
@@ -39,12 +39,19 @@ app.controller('playlistController', function($scope){
 app.factory('SavePlaylist', function($http){
 
   var SavePlaylist = function(playlist){
-
-
-
+    //this is taking in an object  which I want to send in a post request
+    $http.post('/savePlaylist', playlist)
+    .then(function(response){
+      console.log('post sent from SavePlaylist!');
+      return response;
+    })
+    .catch(function(err){
+      throw new Error(err);
+    });
 
   };
 
+  return {SavePlaylist:SavePlaylist};
 
 });
 
