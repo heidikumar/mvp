@@ -19,9 +19,8 @@ app.controller('playlistController', function($scope, SavePlaylist){
     $scope.sendList = function(){
 
       var tracks = $scope.tracks;
-      var playlistObj = {
-        title: $scope.title
-      };
+      var playlistObj = {};
+      playlistObj['title'] = $scope.title
 
       for (var i=0; i<tracks.length; i++){
         var newTrack = tracks[i].split(' - ');
@@ -46,19 +45,19 @@ app.factory('SavePlaylist', function($http, $q){
      $http({
         method: 'POST', 
         url:'/savePlaylist', 
-        data : {'playlist' : playlist}
+        data : {'data' : playlist}
       });
     })
     .then(function(response){
       if (response){
-        resolve(response.data);
+        resolve(response);
       } else {
         reject(err);
       }
     });
 
   };
-  
+
   return {SavePlaylist:SavePlaylist};
 
 });

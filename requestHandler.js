@@ -37,8 +37,22 @@ exports.setTokenAndInitSC = function(request, response){
 
 exports.addPlaylist = function(obj){
 
-	console.log("I just got this: ", obj);
-	//this is going to take the information in the object and 
-	//add it to the mongo db using the mongoose model
+	console.log("I just got this: ", obj.body); 
+	//Now I just have to add that to MongodB
 
+	Playlist.findOne({title: obj.title})
+	.then(function(playlist){
+		if (!playlist){
+			var newPlaylist = new Playlist(obj);
+			newPlaylist.save()
+			.then(function(newPlaylist){
+				console.log(newPlaylist);
+			});
+		} else {
+			console.log('Not a unique playlist name.');
+		}
+	})
+	.catch(function(err){
+		throw err;
+	});
 };
