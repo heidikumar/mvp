@@ -37,22 +37,40 @@ exports.setTokenAndInitSC = function(request, response){
 
 exports.addPlaylist = function(obj){
 
-	console.log("I just got this: ", obj.body); 
+	console.log("I just got this: ", obj.body);
+	// console.log(Playlist); 
 	//Now I just have to add that to MongodB
 
-	Playlist.findOne({title: obj.title})
-	.then(function(playlist){
-		if (!playlist){
-			var newPlaylist = new Playlist(obj);
-			newPlaylist.save()
-			.then(function(newPlaylist){
-				console.log(newPlaylist);
-			});
-		} else {
-			console.log('Not a unique playlist name.');
-		}
-	})
-	.catch(function(err){
-		throw err;
-	});
+	var input = obj.body.data;
+
+	var pl = new Playlist(input);
+	pl.save();
+
+
+	// Playlist.findOne({title: obj.title}, function(err, playlist){
+	// 	if(err){
+	// 		console.log(err);
+	// 	} else {
+	// 		// console.log(playlist);
+	// 		if (!playlist){
+	// 			console.log('no playlist');
+	// 			var newPlaylist = new Playlist(obj);
+	// 			newPlaylist.save()
+	// 			// .then(function(newPlaylist){
+	// 			// 	console.log("New playlist", newPlaylist);
+	// 			// })
+	// 			// .catch(function(err){
+	// 			// 	console.log("new playlist error: ", err);
+	// 			// })
+	// 		} else {
+	// 			console.log('Not a unique playlist name.');
+	// 		}
+	// 	}
+
+	// })
+	// .catch(function(err){
+	// 	console.log(err);
+	// 	throw err;
+	// });
+
 };
