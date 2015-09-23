@@ -47,6 +47,10 @@ exports.addPlaylist = function(obj){
 	pl.save();
 
 
+	//The following would be useful for making each playlist unique
+		//To do this I would have to create something to let the user know when 
+		//they are using a non-unique playlist. Not happening right now!
+
 	// Playlist.findOne({title: obj.title}, function(err, playlist){
 	// 	if(err){
 	// 		console.log(err);
